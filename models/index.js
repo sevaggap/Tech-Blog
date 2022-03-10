@@ -16,13 +16,13 @@ User.belongsToMany(Post, {
       model: Comment,
       unique: false
     }, foreignKey:'user_id'
-})
+});
 
 Post.belongsToMany(User, {
     through: {
       model: Comment,
       unique: false
     }, foreignKey:'post_id'
-})
+});
 
 module.exports = { User, Post, Comment };

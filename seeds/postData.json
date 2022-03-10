@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Unboxing the new iPhone 13 Pro Max",
+      "content": "I just got the new iPhone 13 Pro Max, and I am OBSESSED! The colour is more beautiful in person than in the ads. The device features a LIDAR sensor on the back, which might not be something you'd think you'd use on the day-to-day. However, the practical everyday use for the LIDAR scanner is better auto-focus in low light settings. I'm super excited to test out the camera tonight, keep y'all posted!",
+      "user_id": 1
+    },
+    {
+        "title": "Apple's new iPad Air",
+        "content": "The Apple event today is over, and with it comes a new line of product! The new iPad Air feature Apple's M1 Chip which is a manager update from the previous A2 Bionic Chip. The device also feature 5G, which greatly increases your connectivity to the world when not connected to Wi-Fi. The device also features new colours including: Space Grey, Pink, Purple, Blue, and Starlight. Im super excited to get the device and see what the M1 Chip can do while playing Genshin Impact!",
+        "user_id": 2
+      },
+      {
+        "title": "Why MVC is so important",
+        "content": "MVC allows developers to maintain a true seperation of concerns, devising their code between the Model layer for data, the View layer for design, and  the Controller layer for application logic.",
+        "user_id": 3
+      }
+]
