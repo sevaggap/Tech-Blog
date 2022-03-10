@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { userInfo } = require('os');
 const  { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -32,20 +31,21 @@ router.get('/post/:id', async (req,res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
                 {
                     model: Comment,
-                    attributes: ['content','date_created'],
+                    attributes: ['content'],
                 },
             ],
         });
 
         const post = postData.get({ plain: true });
-
-        res.render('post', {
-            ...post, logged_in: req.session.logged_in
-        });
+        console.log(post);
+        res.json(post);
+        // res.render('post', {
+        //     ...post, logged_in: req.session.logged_in
+        // });
     } catch (err) {
         res.status(500).json(err);
     }
