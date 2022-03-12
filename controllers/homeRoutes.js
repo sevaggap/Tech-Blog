@@ -35,23 +35,32 @@ router.get('/post/:id', async (req,res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['content'],
+                    attributes: ['content','date_created','user_id'],
                 },
             ],
         });
 
         const post = postData.get({ plain: true });
+        const comment_user_id = post.comments[0].user_id;
+        const usercommentData = await User.findByPk(comment_user_id, { attributes:['username'] });
+
+        const usercomment = usercommentData.get({ plain: true });
+
+        console.log(comment_user_id);
+        console.log(usercomment);
         console.log(post);
-        res.json(post);
-        // res.render('post', {
-        //     ...post, logged_in: req.session.logged_in
-        // });
+
+        res.render('post', {
+            ...post, usercomment, logged_in: req.session.logged_in
+        });
+
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/profile', withAuth, async (req,res) => {
+
+router.get('/dashboard', withAuth, async (req,res) => {
     try{
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
@@ -60,8 +69,10 @@ router.get('/profile', withAuth, async (req,res) => {
 
         const user = userData.get({ plain: true });
 
-        res.render('profile', {
-            ...user, logged_in
+        console.log(user);
+
+        res.render('dashboard', {
+            ...user, logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status(500).json(err);
@@ -70,7 +81,7 @@ router.get('/profile', withAuth, async (req,res) => {
 
 router.get('/login', (req,res) => {
     if(req.session.logged_in) {
-        res.redirect('/profile');
+        res.redirect('/dashboard');
         return;
     }
 

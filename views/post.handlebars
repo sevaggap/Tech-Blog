@@ -1,0 +1,23 @@
+<div class="text-left">
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+  <p>Created by {{user.username}} on {{date_created}}</p>
+
+{{#if comments.length}}
+    {{#each comments as |comment|}}
+    <p>{{comment.content}}</p>
+    <p>{{comment.date_created}}</p>
+    {{/each}}
+    <p>Posted by: {{usercomment.username}}</p>
+{{/if}}
+
+  <h3>Leave a comment!</h3>
+    <form class="form login-form">
+      <div class="form-group">
+        <input class="form-input" id="comment" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Post</button>
+      </div>
+    </form>
+</div>
