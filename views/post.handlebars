@@ -7,7 +7,7 @@
     {{#each comments as |comment|}}
     <div class="border border-primary">
     <p>{{comment.content}}</p>
-    <p>{{comment.date_created}}</p>
+    <p>{{format_date comment.date_created}}</p>
     </div>
     <br>
     {{/each}}
