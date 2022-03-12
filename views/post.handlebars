@@ -5,21 +5,26 @@
 
 {{#if comments.length}}
     {{#each comments as |comment|}}
+    <div class="border border-primary">
     <p>{{comment.content}}</p>
     <p>{{comment.date_created}}</p>
+    </div>
+    <br>
     {{/each}}
     <p>Posted by: {{usercomment.username}}</p>
 {{/if}}
 
 {{#if logged_in}}
   <h3>Leave a comment!</h3>
-    <form class="form login-form">
+    <form class="form comment-form">
       <div class="form-group">
-        <input class="form-input" id="comment" />
+        <input class="form-input comment"/>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Post</button>
+        <button class="btn btn-primary" type="submit" data-id="{{id}}">Post</button>
       </div>
     </form>
 {{/if}}
 </div>
+
+  <script src="/js/comment.js"></script>
