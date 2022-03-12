@@ -1,16 +1,23 @@
 <div class="text-left">
   <h2>Create Post</h2>
-  <div class="form-group">
-      <input class="form-input" id="post-title"/>
-      <input class="form-input" id="post-content"/>
-  </div>
 
-    <form class="form add-post-form">
+    <h3>Title</h3> 
+    <div class="input-group input-group-lg">
+        <input type="text" class="form-control post-title" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
+    </div>
+
+    <h3>Content</h3> 
+    <div class="input-group input-group-lg">
+        <input type="text" class="form-control post-content" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
+    </div>
+
+
+    <form class="form create-post-form mt-4">
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Add Post</button>
+        <button class="btn btn-primary" type="submit">Create Post</button>
       </div>
     </form>
 
 </div>
 
-<script src="./js/dashboard.js"></script>
+<script src="/js/createpost.js"></script>

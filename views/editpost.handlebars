@@ -3,20 +3,20 @@
 
 <h3>Title</h3> 
 <div class="input-group input-group-lg">
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value="{{title}}"/>
+  <input type="text" class="form-control post-title" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value="{{title}}"/>
 </div>
 
 <h3>Content</h3>
 <div class="input-group input-group-lg">
     
-  <input type="text" class="form-control" style="height: 300px;"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value="{{content}}"/>
+  <input type="text" class="form-control post-content" style="height: 300px;"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value="{{content}}"/>
   
     </div>
 
     <div class="text-center mt-4">
-    <form class="form edit-form">
+    <form class="form update-form">
       <div class="form-group">
-        <button class="btn btn-primary w-25 p-3" type="submit">Edit</button>
+        <button class="btn btn-primary w-25 p-3" type="submit" data-id="{{id}}">Update</button>
       </div>
     </form>
     
@@ -29,4 +29,4 @@
     </div>
 </div>
 
-<script src="./js/editpost.js"></script>
+<script src="/js/editpost.js"></script>
