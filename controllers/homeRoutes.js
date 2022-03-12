@@ -33,31 +33,51 @@ router.get('/post/:id', async (req,res) => {
                     model: User,
                     attributes: ['username'],
                 },
-                {
-                    model: Comment,
-                    attributes: ['content','date_created','user_id'],
-                },
             ],
         });
 
         const post = postData.get({ plain: true });
-        const comment_user_id = post.comments[0].user_id;
-        const usercommentData = await User.findByPk(comment_user_id, { attributes:['username'] });
 
-        const usercomment = usercommentData.get({ plain: true });
+        if(postData.comment_count != 0) {
+            const postData = await Post.findByPk(req.params.id, {
+                include: [
+                    {
+                        model: User,
+                        attributes: ['username'],
+                    },
+                    {
+                        model: Comment,
+                        attributes: ['content','date_created','user_id'],
+                    },
+                ],
+            });
 
-        console.log(comment_user_id);
-        console.log(usercomment);
-        console.log(post);
+            const post = postData.get({ plain: true });
 
-        res.render('post', {
-            ...post, usercomment, logged_in: req.session.logged_in
-        });
+            const comment_user_id = post.comments[0].user_id;
+            const usercommentData = await User.findByPk(comment_user_id, { attributes:['username'] });
 
+            const usercomment = usercommentData.get({ plain: true });
+
+            console.log(comment_user_id);
+            console.log(usercomment);
+            console.log(post);
+
+            res.render('post', {
+                ...post, usercomment, logged_in: req.session.logged_in
+            });
+
+        } else {
+            console.log(post);
+            res.render('post', {
+                ...post, logged_in: req.session.logged_in
+            });
+        }
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
 
 
 router.get('/dashboard', withAuth, async (req,res) => {

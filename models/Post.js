@@ -18,6 +18,10 @@ Post.init(
     content: {
       type: DataTypes.TEXT
     },
+    comment_count: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
