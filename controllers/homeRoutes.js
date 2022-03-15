@@ -75,6 +75,9 @@ router.get('/post/:id', async (req,res) => {
                 user_names.push(user_name);
             }
 
+            console.log(user_names);
+
+
             for(i=0;i<postData.comments.length;i++) {
                 const comment = {
                     content: postData.comments[i].content,
@@ -87,8 +90,6 @@ router.get('/post/:id', async (req,res) => {
             }
             
             console.log(comments);
-
-            console.log(user_names);
 
             res.render('post', {
                 ...post, comments, logged_in: req.session.logged_in

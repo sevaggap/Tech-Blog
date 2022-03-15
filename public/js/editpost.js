@@ -14,9 +14,9 @@ const delButtonHandler = async (event) => {
         alert('Failed to delete post');
       }
     }
-  };
+};
   
-  const updateButtonHandler = async (event) => {
+const updateButtonHandler = async (event) => {
   event.preventDefault();
 
   if (event.target.hasAttribute('data-id')) {
