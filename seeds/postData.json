@@ -7,13 +7,13 @@
     },
     {
         "title": "Apple's new iPad Air",
-        "content": "The Apple event today is over, and with it comes a new line of product! The new iPad Air feature Apple's M1 Chip which is a manager update from the previous A2 Bionic Chip. The device also feature 5G, which greatly increases your connectivity to the world when not connected to Wi-Fi. The device also features new colours including: Space Grey, Pink, Purple, Blue, and Starlight. Im super excited to get the device and see what the M1 Chip can do while playing Genshin Impact!",
+        "content": "The Apple event today is over, and with it comes a new line of product! The new iPad Air feature Apple's M1 Chip which is a manager update from the previous A2 Bionic Chip. The device also features 5G, which greatly increases your connectivity to the world when not connected to Wi-Fi. The device also features new colours including Space Grey, Pink, Purple, Blue, and Starlight. I’m super excited to get the device and see what the M1 Chip can do while playing Genshin Impact!",
         "user_id": 2,
         "comment_count": 1
       },
       {
         "title": "Why MVC is so important",
-        "content": "MVC allows developers to maintain a true seperation of concerns, devising their code between the Model layer for data, the View layer for design, and  the Controller layer for application logic.",
+        "content": "MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.",
         "user_id": 3,
         "comment_count": 1
       }

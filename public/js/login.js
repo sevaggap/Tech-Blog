@@ -39,7 +39,7 @@ const signupFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
+        alert("An account with that email already exists! Please try again.");
       }
     }
 };
